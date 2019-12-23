@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./Login.css";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+
 
 export default function Login(props) {
   const [username, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    return username.length > 0 && password.length > 0;
   }
 
   function handleSubmit(event) {
@@ -16,20 +16,23 @@ export default function Login(props) {
 
   return (
     <div className="Login">
+      <div>
+        <h2>Log In</h2>
+      </div>
       <form onSubmit={handleSubmit}>
         <FormGroup controlId="username" bsSize="large">
-          <ControlLabel>Email</ControlLabel>
+          <FormLabel>Email</FormLabel>
           <FormControl
             autoFocus
             type="username"
-            value={email}
+            value={props.email}
             onChange={e => setEmail(e.target.value)}
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
-          <ControlLabel>Password</ControlLabel>
+          <FormLabel>Password</FormLabel>
           <FormControl
-            value={password}
+            value={props.password}
             onChange={e => setPassword(e.target.value)}
             type="password"
           />
