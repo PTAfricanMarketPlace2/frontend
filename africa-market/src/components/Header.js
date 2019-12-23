@@ -16,8 +16,7 @@ const Header = () => {
     return (
         <NavBar>
         
-            <div className='logoCont'>
-            <img className='logo' src={logo} alt='logo'/>
+            <div className='logoCont'><Link to='/'><img className='logo' src={logo} alt='logo'/></Link>
             </div>
             <div className='comName'><p>African Marketplace</p></div>
             <div id='links'>

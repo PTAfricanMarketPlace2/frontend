@@ -13,23 +13,40 @@ const SignupForm = () => {
     email: ''
   });
 
+  const addMember = user => {
+    const newMember = {
+      first: user.firstName,
+      last: user.lastName,
+      username: user.userName,
+      password: user.password,
+      email: user.email,
+      role: user.role
+
+    }
+    setUserInput([...userInput, newMember])
+  };
+
+  const submitForm = e => {
+    e.preventDefault();
+    addMember();
+    setUserInput({
+      firstName: '',
+      lastName: '',
+      userName: '',
+      password: '',
+      email: ''
+    });
+  }
+
   const handleChanges = event =>
   setUserInput({
       ...userInput,
       [event.target.name]: event.target.value
     });
 
-    // const handleFormSubmit = e => {
-    //   e.preventDefault();
-    //   addMember(teamMember);
-    //   setUserInput({
-    //       name:'',
-    //       email:'',
-    //       role:''
-    //   });
-    // }
+    
 
-  const { firstName, lastName, email, userName, password } = userInput;
+  // const { firstName, lastName, email, userName, password } = userInput;
 
   return (
     <div>
@@ -38,7 +55,7 @@ const SignupForm = () => {
       </div>
     <form>
       <input
-        value={firstName}
+        value={userInput.firstName}
         onChange={handleChanges}
         placeholder='First name'
         type='text'
@@ -46,7 +63,7 @@ const SignupForm = () => {
         required
       />
       <input
-        value={lastName}
+        value={userInput.vlastName}
         onChange={handleChanges}
         placeholder='Last name'
         type='text'
@@ -54,7 +71,7 @@ const SignupForm = () => {
         required
       />
       <input
-        value={userName}
+        value={userInput.userName}
         onChange={handleChanges}
         placeholder="Username"
         type="text"
@@ -62,7 +79,7 @@ const SignupForm = () => {
         required
       />
       <input
-        value={password}
+        value={userInput.password}
         onChange={handleChanges}
         placeholder='Password'
         type='password'
@@ -70,7 +87,7 @@ const SignupForm = () => {
         required
       />
       <input
-        value={email}
+        value={userInput.email}
         onChange={handleChanges}
         placeholder="Email address"
         type="email"
@@ -78,7 +95,7 @@ const SignupForm = () => {
         required
       />
 
-      <button type='submit'>Submit</button>
+      <button onSubmit={submitForm} type='submit'>Submit</button>
     </form>
     </div>
   );
