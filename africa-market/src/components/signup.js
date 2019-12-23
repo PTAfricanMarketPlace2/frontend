@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import SignupCard from '../components/SignupCard';
 
-
-
+// addMember(userInput)
 
 const Signup = () => {
   const [userInput, setUserInput] = 
@@ -22,7 +22,8 @@ const Signup = () => {
     
 
 
-    const addMember = user => ({
+  const addMember = user => {
+    const newMember = {
       first: user.firstname,
       last: user.lastname,
       username: user.username,
@@ -30,22 +31,20 @@ const Signup = () => {
       email: user.email,
       role: user.role
 
+    }
     
-    
-    });
+  };
 
   const submitForm = e => {
     e.preventDefault();
     addMember(userInput);
-    useEffect((props) => {
-      axios.post("https://african-marketplace.herokuapp.com/auth/register", {
-        username: props.username,
-        password: props.password
-      }).then
-      .catch(err => {
-        console.log("Error, things are getting weird");
-      });
-    },[])
+    setUserInput({
+      firstname: '',
+      lastname: '',
+      username: '',
+      password: '',
+      email: ''
+    });
   }
 
 
@@ -60,7 +59,7 @@ const Signup = () => {
         onChange={handleChanges}
         placeholder='First name'
         type='text'
-        name='firstName'
+        name='firstname'
         required
       />
       <input
@@ -68,7 +67,7 @@ const Signup = () => {
         onChange={handleChanges}
         placeholder='Last name'
         type='text'
-        name='lastName'
+        name='lastname'
         required
       />
       <input
@@ -76,7 +75,7 @@ const Signup = () => {
         onChange={handleChanges}
         placeholder="Username"
         type="text"
-        name="userName"
+        name="username"
         required
       />
       <input
