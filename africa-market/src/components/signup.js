@@ -3,40 +3,15 @@ import SignupCard from '../components/SignupCard';
 
 // addMember(userInput)
 
-const SignupForm = () => {
+const Signup = () => {
   const [userInput, setUserInput] = 
   useState({
-    firstName: '',
-    lastName: '',
-    userName: '',
+    firstname: '',
+    lastname: '',
+    username: '',
     password: '',
     email: ''
   });
-
-  const addMember = user => {
-    const newMember = {
-      first: user.firstName,
-      last: user.lastName,
-      username: user.userName,
-      password: user.password,
-      email: user.email,
-      role: user.role
-
-    }
-    setUserInput([...userInput, newMember])
-  };
-
-  const submitForm = e => {
-    e.preventDefault();
-    addMember();
-    setUserInput({
-      firstName: '',
-      lastName: '',
-      userName: '',
-      password: '',
-      email: ''
-    });
-  }
 
   const handleChanges = event =>
   setUserInput({
@@ -46,7 +21,32 @@ const SignupForm = () => {
 
     
 
-  // const { firstName, lastName, email, userName, password } = userInput;
+
+  const addMember = user => {
+    const newMember = {
+      first: user.firstname,
+      last: user.lastname,
+      username: user.username,
+      password: user.password,
+      email: user.email,
+      role: user.role
+
+    }
+    
+  };
+
+  const submitForm = e => {
+    e.preventDefault();
+    addMember(userInput);
+    setUserInput({
+      firstname: '',
+      lastname: '',
+      username: '',
+      password: '',
+      email: ''
+    });
+  }
+
 
   return (
     <div>
@@ -55,27 +55,27 @@ const SignupForm = () => {
       </div>
     <form>
       <input
-        value={userInput.firstName}
+        value={userInput.firstname}
         onChange={handleChanges}
         placeholder='First name'
         type='text'
-        name='firstName'
+        name='firstname'
         required
       />
       <input
-        value={userInput.vlastName}
+        value={userInput.lastname}
         onChange={handleChanges}
         placeholder='Last name'
         type='text'
-        name='lastName'
+        name='lastname'
         required
       />
       <input
-        value={userInput.userName}
+        value={userInput.username}
         onChange={handleChanges}
         placeholder="Username"
         type="text"
-        name="userName"
+        name="username"
         required
       />
       <input
@@ -102,4 +102,4 @@ const SignupForm = () => {
 };
 
 
-export default SignupForm;
+export default Signup;
