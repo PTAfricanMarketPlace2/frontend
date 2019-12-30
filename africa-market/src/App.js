@@ -4,6 +4,8 @@ import { Route } from 'react-router-dom';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Header from './components/Header';
+import Dashboard from './components/Dashboard';
+
 
 const App = () => {
   return (
@@ -11,7 +13,8 @@ const App = () => {
     
     <Header />
     <Route exact path='/login' component={Login} />
-    <Route path='/signup' component={Signup} />
+    <Route exact path='/signup' component={Signup} />
+    <Route path='/dashboard' component={Dashboard} />
     </div>
   );
 }
