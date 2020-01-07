@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
-import Signup from './components/Signup';
-import Login from './components/Login';
+import Signup from './components/signup';
+import Login from './components/login';
 import Nav from './components/Nav';
 import Dashboard from './components/Dashboard';
 import MarketFeed from './components/MarketFeed';
