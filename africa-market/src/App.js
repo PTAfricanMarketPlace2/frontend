@@ -14,7 +14,6 @@ const App = () => {
       <Nav />
       <Route exact path='/login' component={Login} />
       <Route exact path='/signup' component={Signup} />
-      <PrivateRoute exact path='/' />
       <PrivateRoute path='/dashboard' component={Dashboard} />
       <PrivateRoute path='/mfeed' component={MarketFeed} />
     </div>

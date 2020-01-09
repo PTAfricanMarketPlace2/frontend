@@ -6,8 +6,7 @@ import {
   FormGroup,
   Button
 } from 'react-bootstrap';
-
-// addMember(userInput)
+import axios from 'axios';
 
 const Signup = () => {
   const [userInput, setUserInput] = useState({
@@ -16,7 +15,7 @@ const Signup = () => {
     username: '',
     password: '',
     email: ''
-  }); //
+  });
 
   const handleChanges = e =>
     setUserInput({
@@ -26,12 +25,23 @@ const Signup = () => {
 
   const addMember = user => {
     const newMember = {
-      first: user.firstname,
-      last: user.lastname,
+      firstname: user.firstname,
+      lastname: user.lastname,
       username: user.username,
       password: user.password,
       email: user.email
     };
+
+    //Required Fields: username, password, firstname, lastname, email role (Optional)
+    axios
+      .post(
+        'https://african-marketplace2.herokuapp.com/api/auth/register',
+        newMember
+      )
+      .then(res => {
+        console.log(res.status);
+      })
+      .catch(res => console.log(res));
   };
 
   const submitForm = e => {
