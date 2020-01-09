@@ -28,7 +28,8 @@ export default function Login(props) {
       <div>
         <h2>Log In</h2>
       </div>
-      <form onSubmit={event => handleSubmit(event)}>
+
+      <form id='signupCard' onSubmit={event => handleSubmit(event)}>
         <FormGroup controlId='username' bsSize='large'>
           <FormLabel>Email</FormLabel>
           <FormControl
