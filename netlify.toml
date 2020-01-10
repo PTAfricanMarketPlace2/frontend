@@ -1,7 +1,8 @@
 [build]
   base = "africa-market" 
   publish = "africa-market/build"
-  
+  command = "yarn build"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
