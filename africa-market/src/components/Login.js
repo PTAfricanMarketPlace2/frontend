@@ -19,7 +19,7 @@ export default function Login(props) {
       .then(res => {
         console.log(res.status);
         localStorage.setItem('token', res.data.token);
-        props.history.push('/dashboard');
+        props.history.push('/mfeed');
       })
       .catch(res => console.log(res));
   }
