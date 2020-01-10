@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Nav from './components/Nav';
@@ -8,16 +8,16 @@ import Dashboard from './components/Dashboard';
 import MarketFeed from './components/MarketFeed';
 import PrivateRoute from './components/PrivateRoute';
 
-const App = () => {
+const App = (props) => {
   return (
     <div className='App'>
       <Nav />
-      <Route exact path='/login' component={Login} />
-      <Route exact path='/signup' component={Signup} />
-      <PrivateRoute path='/dashboard' component={Dashboard} />
-      <PrivateRoute path='/mfeed' component={MarketFeed} />
+      <Route exact path='/login' component={Login} {...props}/>
+      <Route exact path='/signup' component={Signup} {...props}  />
+      <PrivateRoute path='/dashboard' component={Dashboard} {...props}  />
+      <PrivateRoute path='/mfeed' component={MarketFeed} {...props} />
     </div>
   );
 };
 
-export default App;
+export default withRouter(App);
