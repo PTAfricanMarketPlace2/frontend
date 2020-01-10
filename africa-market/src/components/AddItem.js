@@ -40,12 +40,12 @@ const AddItems = props => {
 				<FormLabel>Category</FormLabel>
 				<FormControl as='select' name="description" value={item.description} onChange={handleInputChange}>
           			<option>Select the category</option>
-          			<option value="Eggs">Eggs</option>
-          			<option value="Livestock">Livestock</option>
-          			<option value="Wheat">Wheat Flour</option>
-		  			<option value="Grain">Whole Grain</option>
-					<option value="Whole">Whole Flour</option>
-					<option value="Beans">Beans</option>
+          			<option value="Animal Products">Animal Products</option>
+          			<option value="Cereal">Cereal</option>
+          			<option value="Fruits">Fruits</option>
+		  			<option value="Vegetables">Vegetables</option>
+					<option value="Seeds & Nuts">Seeds & Nuts</option>
+					<option value="Other">Other</option>
         		</FormControl>
 			</FormGroup>
 

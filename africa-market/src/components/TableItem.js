@@ -1,7 +1,5 @@
 import React from 'react'
-import {Table } from 'react-bootstrap';
-
-
+import {Table, Button } from 'react-bootstrap';
 
 const ItemTable = props => (
     
@@ -23,17 +21,18 @@ const ItemTable = props => (
             <td>{item.description}</td>
             <td>${item.price}</td>
             <td>
-              <button
+            
+              <Button variant='secondary'
                 onClick={() => {
                   props.editRow(item)
                 }}
                 className="button muted-button">
                 Edit
-              </button>
-              <button
+              </Button>
+              <Button variant='danger'
                 onClick={() => props.deleteItem(item.id)}>
                 Delete
-              </button>
+              </Button>
             </td>
           </tr>
         ))
