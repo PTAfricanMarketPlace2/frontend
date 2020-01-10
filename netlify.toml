@@ -1,6 +1,6 @@
 [build]
   base = "africa-market" 
-  publish = "africa-market/build"
+  publish = "/build"
   command = "yarn build"
 
 [[redirects]]
