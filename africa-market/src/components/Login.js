@@ -32,7 +32,7 @@ export default function Login(props) {
 
       <form id='signupCard' onSubmit={event => handleSubmit(event)}>
         <FormGroup controlId='username' bsSize='large'>
-          <FormLabel>Email</FormLabel>
+          <FormLabel>User Name</FormLabel>
           <FormControl
             autoFocus
             type='username'

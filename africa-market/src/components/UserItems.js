@@ -7,7 +7,7 @@ const UserItems = () => {
 
     // Sample Data Added To show info
     const dataItems = [
-        { id: 1, name: "Eggs", description: "Animal Products", price: "2.00" },
+        { id: 1, name: "Eggs", category_id: "Animal Products", price: "2.00" },
         
     ];
 

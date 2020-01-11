@@ -1,12 +1,14 @@
 import React from 'react';
 import {DataItems} from './DataItems';
 import {Card, Button} from 'react-bootstrap';
-
+// import {axiosWithAuth} from '../axiosWithAuth';
 
 
 const UserFeed = () => {
 
 
+    // axiosWithAuth().get('')
+    // .then(res) 
 
     return (
         <>
@@ -20,7 +22,7 @@ const UserFeed = () => {
                     <Card className='card'>
                         <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
-                        <Card.Text>{item.description}</Card.Text>
+                        <Card.Text>{item.category_id}</Card.Text>
                         <Card.Text>Location: {item.country}</Card.Text>
                         <Card.Text>Price: {item.price}</Card.Text>
                         </Card.Body>
