@@ -6,6 +6,8 @@ import {Card, Button} from 'react-bootstrap';
 
 const UserFeed = () => {
 
+
+
     return (
         <>
         
@@ -16,7 +18,6 @@ const UserFeed = () => {
                 {DataItems.map(item => ( 
                     
                     <Card className='card'>
-                        <Card.Img className="productPic" src={item.url} alt={item.name} />
                         <Card.Body>
                         <Card.Title>{item.name}</Card.Title>
                         <Card.Text>{item.description}</Card.Text>
