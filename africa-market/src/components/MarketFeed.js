@@ -2,13 +2,17 @@ import React from 'react';
 import {DataItems} from './DataItems';
 import {Card, Button} from 'react-bootstrap';
 // import {axiosWithAuth} from '../axiosWithAuth';
-
+import axios from 'axios';
 
 const UserFeed = () => {
 
 
-    // axiosWithAuth().get('')
-    // .then(res) 
+    axios.get('https://african-marketplace2.herokuapp.com/api/users/:id/products')
+    .then(res => {
+        console.log(res.status);
+        console.log(res.data);
+    }) 
+    .catch(err => {console.log(err)})
 
     return (
         <>

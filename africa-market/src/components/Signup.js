@@ -8,7 +8,7 @@ import {
 } from 'react-bootstrap';
 import axios from 'axios';
 
-const Signup = () => {
+const Signup = (props) => {
   const [userInput, setUserInput] = useState({
     firstname: '',
     lastname: '',
@@ -40,6 +40,7 @@ const Signup = () => {
       )
       .then(res => {
         console.log(res.status);
+        props.history.push('/login');
       })
       .catch(res => console.log(res));
   };
@@ -61,7 +62,7 @@ const Signup = () => {
       <div>
         <h2>Sign Up</h2>
       </div>
-      <Form id='signupCard' onSubmit={submitForm}>
+      <Form className='signupCard' onSubmit={submitForm}>
         <FormGroup className='form'>
           <FormLabel>First Name: </FormLabel>
           <FormControl

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
+import { Button, Form, FormGroup, FormControl, FormLabel } from 'react-bootstrap';
 import axios from 'axios';
 
 export default function Login(props) {
@@ -25,13 +25,13 @@ export default function Login(props) {
   }
 
   return (
-    <div className='Login'>
+    <div id='Login'>
       <div>
         <h2>Log In</h2>
       </div>
 
-      <form id='signupCard' onSubmit={event => handleSubmit(event)}>
-        <FormGroup controlId='username' bsSize='large'>
+      <Form className='signupCard' onSubmit={event => handleSubmit(event)}>
+        <FormGroup className='form' controlId='username' bsSize='large'>
           <FormLabel>User Name</FormLabel>
           <FormControl
             autoFocus
@@ -40,7 +40,7 @@ export default function Login(props) {
             onChange={e => setEmail(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId='password' bsSize='large'>
+        <FormGroup className='form' controlId='password' bsSize='large'>
           <FormLabel>Password</FormLabel>
           <FormControl
             value={props.password}
@@ -51,7 +51,7 @@ export default function Login(props) {
         <Button block bsSize='large' disabled={!validateForm()} type='submit'>
           Login
         </Button>
-      </form>
+      </Form>
     </div>
   );
 }
