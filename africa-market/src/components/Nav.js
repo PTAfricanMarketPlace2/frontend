@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../img/logoicon.png';
 import { Navbar, Nav, Button, Image } from 'react-bootstrap';
 
@@ -8,7 +8,7 @@ const Navigation = () => {
     <>
       <section id='navigation'>
         <div id='logo' href='#home'>
-          <Link to='/'>
+          <a href='https://africanmarketplacept2.netlify.com/'>
             <Image
               src={logo}
               width='50'
@@ -16,7 +16,7 @@ const Navigation = () => {
               alt='React Bootstrap logo'
               roundedCircle
             />
-          </Link>
+          </a>
         </div>
 
         <Nav id='navbtn' className='justify-content-end'>
