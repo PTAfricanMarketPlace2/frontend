@@ -12,7 +12,8 @@ const App = (props) => {
   return (
     <div className='App'>
       <Nav />
-      <Route exact path='/login' component={Login} {...props}/>
+      <Route exact path='/' component={Login} {...props}/>
+      <Route exact path='/login' component={Login} {...props} />
       <Route exact path='/signup' component={Signup} {...props}  />
       <PrivateRoute path='/dashboard' component={Dashboard} {...props}  />
       <PrivateRoute path='/mfeed' component={MarketFeed} {...props} />

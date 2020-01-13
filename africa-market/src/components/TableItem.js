@@ -8,7 +8,7 @@ const ItemTable = props => (
     <thead>
       <tr>
         <th>Item Name</th>
-        <th>Description</th>
+        <th>Category</th>
         <th>Price</th>
         <th>Actions</th>
       </tr>
@@ -18,7 +18,7 @@ const ItemTable = props => (
         props.items.map(item => (
             <tr key={item.id}>
             <td>{item.name}</td>
-            <td>{item.description}</td>
+            <td>{item.category_id}</td>
             <td>${item.price}</td>
             <td>
             
