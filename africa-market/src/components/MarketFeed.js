@@ -1,15 +1,17 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {DataItems} from './DataItems';
 import {Card, Button} from 'react-bootstrap';
-// import {axiosWithAuth} from '../axiosWithAuth';
 import axios from 'axios';
+import { axiosWithAuth } from '../axiosWithAuth';
 
 const UserFeed = () => {
+    const [meedfeed, setMeedfeed] = useState()
     useEffect(() => {
-        axios.get('https://african-marketplace2.herokuapp.com/api/users/:id/products')
+        axiosWithAuth().get('https://african-marketplace2.herokuapp.com/api/products/')
         .then(res => {
-            console.log(res.status);
+            console.log('this is from User Feed', res.status);
             console.log(res.data);
+            setMeedfeed(res.data)
         }) 
         .catch(err => {console.log(err)})  
       },[]);
@@ -23,7 +25,7 @@ const UserFeed = () => {
         <h1>Community Market</h1>
         </div>
             <div className="cardContainer">
-                {DataItems.map(item => ( 
+                {meedfeed ? meedfeed.map(item => ( 
                     
                     <Card className='card'>
                         <Card.Body>
@@ -35,7 +37,7 @@ const UserFeed = () => {
                         <Button>Buy</Button>
                     </Card>
                     
-                ))}
+                )) : null}
             </div>
         
         </>
