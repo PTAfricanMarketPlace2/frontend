@@ -8,7 +8,7 @@ const UserFeed = () => {
     // axiosWithAuth() won't work on this because the API doesn't require authentication
     // switched back to regular axios call to fix it
     axios
-      .get('https://african-marketplace2.herokuapp.com/api/products/')
+      .get('https://african-marketplace2.herokuapp.com/api/users/:id/products')
       .then(res => {
         console.log('this is from User Feed', res.status);
         console.log(res.data);
